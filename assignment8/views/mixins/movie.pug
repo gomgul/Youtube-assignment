@@ -1,0 +1,4 @@
+mixin movieMixin(video = {}) //데이터를 받을 수 있는 partials
+  div
+    a(href=`/${video.id}`)
+      h3=video.title

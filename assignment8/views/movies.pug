@@ -1,0 +1,12 @@
+extends templates/layout
+include mixins/movie
+
+block content
+  h1=pageTitle
+  form(action="/filter", method="GET")
+    input(placeholder="Filter by year", type="text" name="year")
+    input(placeholder="Filter by rating", type="number" name="rating")
+    button Search
+  each movie in movies // movies랑 movieController 안에 있는 movies랑 같아야 한다
+    +movieMixin(movie)  //괄호 안 movie는 윗줄 movie임
+    
